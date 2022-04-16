@@ -1,0 +1,80 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Tensile simulator</title>
+</head>
+<body>
+    <main class="form" id="container">   
+        <div class="row">
+            <section>
+                <div class="col-1-of-2">
+                      <div class=" form__block form__block--input-section">
+                          <form class="form__block--form" id="formField">
+                              <div class="u-center-text u-margin-top-small">
+                                  <h2 class="heading__primary">Tensile Testing Machine</h2>
+                              </div>
+                              <div class="heading--box">
+                                  <p class="heading--text">Pick a material type</p>
+                                  <select class="select__block" name="metal" id="material" required>
+                                      <option value="select">select a material type</option>
+                                      <option value="Aluminum">Aluminum</option>
+                                      <option value="Brass">Brass</option>
+                                      <option value="Mild Metal">Mild Metal</option>
+                                  </select>
+                                  <div class="input__block">
+                                      <label for="text">Enter length</label>
+                                      <input   type="text"  id="length" placeholder="Enter length" required>
+                                      <label for="text">Diameter</label>
+                                      <input   type="text"  id="Diameter" placeholder="Enter diameter" required>
+                                  </div>
+                                  <div>
+                                      <p class="paragraph">force:</p>
+                                  </div>
+                                  <div>
+                                      <button class="button button__1" id="btn" type="submit">See Result</button>
+                                      <button class="button button__2"id="btn" type="submit">See graph</button>
+                                      <button class="button button__3"id="btn" type="submit">See simulator</button>
+      
+                                  </div>
+                                 
+                              </div>
+                              
+                          </form>
+                      </div>
+                  </div>
+           </section>
+           <section>
+                  <div class="col-1-of-2">
+                      <div class="heading--box">
+                          <div class="u-center-text u-margin-top-small">
+                              <h2 class="heading__primary">Tensile Result output</h2>
+                          </div>
+                          <div class="output-section">
+                            
+                              <p class="output force">@load:</p>
+                              <p class="output stress">stress@yield: upperst - lowerstres / 2</p>
+                              <p class="output area">Area@:</p>
+                              <p class="output strain">long.(Axial)strain@:final strain</p>
+                              <p class="output lo">change length@:</p>
+                              <p class="output fl">%percentage Elongation@:</p>
+                              <p class="output fl">@Change in diameter:0</p>
+                              <p class="output fl">@Ultimate tensile stress:at 5th pos</p>
+                          </div>
+      
+                      </div>
+                   
+                  </div>         
+            </section>         
+        </div>
+    </main>
+    <footer class="u-center-text">
+        <h3>Reserved &copy; 2022 Engr Babalola</h3>
+    </footer>
+    
+   <script src="app.js"></script>
+</body>
+</html>

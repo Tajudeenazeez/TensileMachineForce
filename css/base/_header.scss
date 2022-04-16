@@ -1,0 +1,25 @@
+.heading {
+    &__primary {
+        font-size: 3rem;
+        color: $color-grey;
+        padding: 3rem;
+        text-transform: uppercase;
+    }
+    
+    &--box{
+        margin: 1.5rem 5rem;
+        padding: .5rem;
+        font-size: 2rem;
+    }
+
+    &--text {
+        margin-bottom: 1.4rem;
+        text-transform: capitalize;
+        &:hover{
+            text-shadow: 0 .1rem .2rem $color-primary;
+        }
+    }
+
+
+    
+}

@@ -1,0 +1,162 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.row {
+  width: 114rem;
+  margin: 0 auto;
+}
+
+.row:not(:last-child) {
+  margin-bottom: 3rem;
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.row [class^='col-'] {
+  float: left;
+}
+
+.row [class^='col-']:not(:last-child) {
+  margin-right: 8rem;
+}
+
+.row .col-1-of-2 {
+  width: calc((100% - 8rem) / 2);
+}
+
+.u-center-text {
+  text-align: center;
+}
+
+.u-margin-top-small {
+  margin-top: 4rem;
+}
+
+.u-margin-top-medium {
+  margin-top: 6rem;
+}
+
+.u-margin-top-big {
+  margin-top: 12rem;
+}
+
+.heading__primary {
+  font-size: 3rem;
+  color: #333;
+  padding: 3rem;
+  text-transform: uppercase;
+}
+
+.heading--box {
+  margin: 1.5rem 5rem;
+  padding: .5rem;
+  font-size: 2rem;
+}
+
+.heading--text {
+  margin-bottom: 1.4rem;
+  text-transform: capitalize;
+}
+
+.heading--text:hover {
+  text-shadow: 0 0.1rem 0.2rem #dad7ea;
+}
+
+main {
+  height: 95vh;
+  width: 150rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.6rem;
+  margin: 0 auto;
+}
+
+.form__block {
+  background-color: #dcd1d5;
+  height: 85%;
+  font-size: 1.9rem;
+  width: 100%;
+}
+
+.select__block {
+  font-size: 1.9rem;
+  height: 5rem;
+  margin-bottom: 1.5rem;
+  text-transform: capitalize;
+  border-radius: 5px;
+}
+
+.select__block:hover {
+  background-color: #cba0d4;
+}
+
+.input__block input {
+  display: block;
+  height: 2rem;
+  width: 25rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.input__block label {
+  margin-top: 1.5rem;
+}
+
+.paragraph {
+  font-size: 1.9rem;
+  padding: 1.5rem 0;
+  text-transform: uppercase;
+}
+
+.output {
+  margin: 2rem;
+  text-transform: capitalize;
+  font-weight: 400;
+  border-bottom: 2px solid #ab24c6;
+  letter-spacing: .1rem;
+  line-height: 1rem;
+  padding: 1.2rem;
+}
+
+.button {
+  border: 2px solid #a197d9;
+  border-radius: 3px;
+  font-size: 1.9rem;
+  text-shadow: 2px 3px #dad7ea;
+  padding: 1rem .1rem;
+  -webkit-transition: all .8s ease-in;
+  transition: all .8s ease-in;
+  margin-top: 1.5rem;
+}
+
+.button:hover {
+  color: #500d5e;
+  background-color: #cba0d4;
+}
+/*# sourceMappingURL=main.css.map */

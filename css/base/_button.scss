@@ -1,0 +1,15 @@
+.button {
+    // height: 40px;
+    border: 2px solid $color-primary-dark;
+    border-radius: 3px;
+    font-size: $default-font-size;
+    text-shadow: 2px 3px $color-primary;
+    padding:  1rem .1rem;
+    transition: all .8s ease-in;
+    margin-top: 1.5rem;
+
+    &:hover {
+        color: $color-tertiary-dark;
+        background-color: $color-tertiary-light;
+    }
+}

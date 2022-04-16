@@ -1,0 +1,20 @@
+.row {
+    width: $max-width;
+    margin: 0 auto;    
+    &:not(:last-child) {
+        margin-bottom: $horizontal-gap;
+    }
+    @include clearfix;
+
+    [class^='col-']{
+        float: left;
+        &:not(:last-child){
+            margin-right: $vertical-gap;
+        }
+    }
+    & .col-1-of-2 {
+        width: calc((100% - #{$vertical-gap}) / 2 ); 
+    }
+}
+
+

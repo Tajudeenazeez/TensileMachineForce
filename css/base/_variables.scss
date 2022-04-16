@@ -1,0 +1,30 @@
+//color
+$color-primary: #dad7ea;
+$color-primary-light: #ead7de;
+$color-primary-dark: #a197d9;
+
+$color-secondary: #dcd1d5;
+$color-secondary-light: #ead7de;
+$color-secondary-dark: #d69fb1;
+
+$color-tertiary: #ab24c6;
+$color-tertiary-light: #cba0d4;
+$color-tertiary-dark: #500d5e;
+
+$color-grey: #333;
+
+//row arch
+$max-width : 114rem;
+$horizontal-gap: 3rem;
+$vertical-gap: 8rem;
+
+//font
+$default-font-size : 1.9rem;
+
+@mixin clearfix {
+    &::after{
+        content: "";
+        display: table;
+        clear: both;
+    }
+}

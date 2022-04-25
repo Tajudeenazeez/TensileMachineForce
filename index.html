@@ -19,25 +19,25 @@
                               </div>
                               <div class="heading--box">
                                   <p class="heading--text">Pick a material type</p>
-                                  <select class="select__block" name="metal" id="material" required>
-                                      <option value="select">select a material type</option>
-                                      <option value="Aluminum">Aluminum</option>
-                                      <option value="Brass">Brass</option>
-                                      <option value="Mild Metal">Mild Metal</option>
+                                  <select class="select__block" name="metal" id="material" aria-placeholder="pick a type" required>
+                                      <option value="select" disabled>----</option>
+                                      <option id="aluminum" value="Aluminum">Aluminum</option>
+                                      <option id="brass" value="Brass">Brass</option>
+                                      <option id="metal" value="Mild Metal">Mild Metal</option>
                                   </select>
                                   <div class="input__block">
                                       <label for="text">Enter length</label>
                                       <input   type="text"  id="length" placeholder="Enter length" required>
                                       <label for="text">Diameter</label>
-                                      <input   type="text"  id="Diameter" placeholder="Enter diameter" required>
+                                      <input   type="text"  id="diameter" placeholder="Enter diameter" required>
                                   </div>
                                   <div>
-                                      <p class="paragraph">force:</p>
+                                      <p class="paragraph" id="force">force:</p>
                                   </div>
                                   <div>
-                                      <button class="button button__1" id="btn" type="submit">See Result</button>
-                                      <button class="button button__2"id="btn" type="submit">See graph</button>
-                                      <button class="button button__3"id="btn" type="submit">See simulator</button>
+                                      <button class="button button__1" id="btn-result" type="submit">See Result</button>
+                                      <!-- <button class="button button__2"id="btn-graph">See graph</button>
+                                      <button class="button button__3"id="btn-simulator" type="submit">See simulator</button> -->
       
                                   </div>
                                  
@@ -50,19 +50,19 @@
            <section>
                   <div class="col-1-of-2">
                       <div class="heading--box">
-                          <div class="u-center-text u-margin-top-small">
+                          <div class="u-center-text u-margin-top-smalll">
                               <h2 class="heading__primary">Tensile Result output</h2>
                           </div>
-                          <div class="output-section">
+                          <div class="output__section">
                             
-                              <p class="output force">@load:</p>
-                              <p class="output stress">stress@yield: upperst - lowerstres / 2</p>
-                              <p class="output area">Area@:</p>
-                              <p class="output strain">long.(Axial)strain@:final strain</p>
-                              <p class="output lo">change length@:</p>
-                              <p class="output fl">%percentage Elongation@:</p>
-                              <p class="output fl">@Change in diameter:0</p>
-                              <p class="output fl">@Ultimate tensile stress:at 5th pos</p>
+                              <!-- <p class="output force" id="">@load:</p> -->
+                              <p class="output output__stress" id="stressText">stress@yield:</p>
+                              <p class="output output__area" id="areaText">Area@:</p>
+                              <p class="output output__strain" id="strainText">long.(Axial)strain@:</p>
+                              <p class="output output__lo" id="changeLength">change length@:</p>
+                              <p class="output output__fl" id="elongationText">%percentage Elongation@:</p>
+                              <p class="output output__fl" id="diameterText">@Change in diameter:</p>
+                              <p class="output output__fl" id="tensileStress">@Ultimate tensile stress:</p>
                           </div>
       
                       </div>
@@ -70,11 +70,18 @@
                   </div>         
             </section>         
         </div>
+       
     </main>
+    <div class="row">
+        <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+    </div>
     <footer class="u-center-text">
         <h3>Reserved &copy; 2022 Engr Babalola</h3>
     </footer>
-    
-   <script src="app.js"></script>
+   <script id="script-run" src="app.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+   <script
+src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+</script>
 </body>
 </html>

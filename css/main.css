@@ -178,7 +178,7 @@ main {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  width: 100rem;
+  width: 80rem;
   height: 60rem;
   -webkit-box-shadow: 2px 3px 2px #111;
           box-shadow: 2px 3px 2px #111;

@@ -163,6 +163,7 @@ main {
   visibility: hidden;
   -webkit-transition: all 1s;
   transition: all 1s;
+  overflow: hidden;
 }
 
 .popup:target {
@@ -176,7 +177,8 @@ main {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  width: 70%;
+  width: 100rem;
+  height: 400px;
   -webkit-box-shadow: 2px 3px 2px #111;
           box-shadow: 2px 3px 2px #111;
   background-color: #fff;
@@ -188,7 +190,7 @@ main {
 
 .popup__right {
   display: table-cell;
-  width: 33.33333%;
+  width: 20.33333%;
   vertical-align: middle;
   padding: 2rem 3rem;
   font-size: 16px;
@@ -208,16 +210,8 @@ main {
 
 .popup__text {
   font-size: 1.4rem;
-  margin-bottom: 2rem;
-  -webkit-column-count: 2;
-          column-count: 2;
-  -webkit-column-gap: 1em;
-          column-gap: 1em;
-  -webkit-column-rule: 2px solid red;
-          column-rule: 2px solid red;
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
+  color: green;
+  padding: 2rem;
 }
 
 .popup__close:link, .popup__close:visited {

@@ -9,6 +9,7 @@
     opacity: 0;
     visibility: hidden;
     transition: all 1s;
+    overflow: hidden;
     &:target {
         opacity: 1;
         visibility: visible
@@ -16,7 +17,8 @@
 
     &__content {
        @include absposition;
-        width: 70%;
+        width: 100rem;
+        height: 400px;
         box-shadow: 2px 3px 2px #111;
         background-color: #fff;
         border-radius: 3px;
@@ -28,11 +30,12 @@
     }
     &__right{
         display: table-cell;
-        width: 33.33333%;
+        width: 20.33333%;
         vertical-align: middle;
         padding: 2rem 3rem;
         font-size: 16px;
         color: orangered;
+
 
     }
     &__left{
@@ -52,11 +55,8 @@
     }
     &__text {
         font-size: 1.4rem;
-        margin-bottom: 2rem;
-        column-count: 2;
-        column-gap: 1em;
-        column-rule: 2px solid red;
-        hyphens: auto;
+        color: green;
+        padding: 2rem;
     }
     &__close {
         &:link,

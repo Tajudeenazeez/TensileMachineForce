@@ -333,7 +333,13 @@ function onSubmitResult(e) {
     stressResult.textContent = `stress @yield: ${averageStress}`
     strainResult.textContent = `strain: ${strainArr[strainArr.length-1]}`
     tensileStress.textContent = `ultimate Tensile Stress: ${stressArr[4]}`
-    simulator.textContent = `force :${forceArr} stress: ${stressArr} and strain ${strainArr}`
+    simulator.textContent = `force :
+    ${forceArr} 
+    stress: 
+    ${stressArr} 
+    and 
+    strain: 
+    ${strainArr}`
 
     //generateGraph()
      

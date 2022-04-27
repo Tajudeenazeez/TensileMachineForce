@@ -1,5 +1,5 @@
 .popup {
-    background-color: rgba(222, 212, 222, .9);
+    background-color: rgba(000, 000, 000, 1);
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -17,8 +17,8 @@
 
     &__content {
        @include absposition;
-        width: 80rem;
-        height: 60rem;
+        width: 95rem;
+        height: 50rem;
         box-shadow: 2px 3px 2px #111;
         background-color: #fff;
         border-radius: 3px;

@@ -153,7 +153,7 @@ main {
 }
 
 .popup {
-  background-color: rgba(222, 212, 222, 0.9);
+  background-color: black;
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -178,8 +178,8 @@ main {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  width: 80rem;
-  height: 60rem;
+  width: 95rem;
+  height: 50rem;
   -webkit-box-shadow: 2px 3px 2px #111;
           box-shadow: 2px 3px 2px #111;
   background-color: #fff;

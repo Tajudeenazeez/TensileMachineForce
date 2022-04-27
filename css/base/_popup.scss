@@ -1,6 +1,6 @@
 .popup {
     background-color: rgba(222, 212, 222, .9);
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     position: fixed;
     top: 0;
@@ -18,13 +18,13 @@
     &__content {
        @include absposition;
         width: 100rem;
-        height: 400px;
+        height: 60rem;
         box-shadow: 2px 3px 2px #111;
         background-color: #fff;
         border-radius: 3px;
         z-index: 4000;
         overflow: hidden;
-       display: table;
+       display: block;
         //text-align: center;
         
     }

@@ -24,6 +24,7 @@ const changeLength = document.querySelector("#changeLength")
 const tensileStress = document.querySelector("#tensileStress")
 const elongationResult = document.querySelector("#elongationText")
 const diameterResult = document.querySelector("#diameterText")
+const simulator = document.getElementById("simulate")
 //working array of force, stress and strain
 
 
@@ -65,6 +66,9 @@ function onSubmitResult(e) {
     const stressArr = [];
     const strainArr = [];
 
+  if(getOption.value === "Aluminum" || getOption.value ===  getOption.value ===  "Brass" || "Mild Metal"){
+      seeSimulation.classList.remove("hidden")
+  }
     if (getOption.value === "Aluminum") {
         //finalLength
         elongationResult.textContent = `elongation : ${elongationAlu}`
@@ -329,6 +333,7 @@ function onSubmitResult(e) {
     stressResult.textContent = `stress @yield: ${averageStress}`
     strainResult.textContent = `strain: ${strainArr[strainArr.length-1]}`
     tensileStress.textContent = `ultimate Tensile Stress: ${stressArr[4]}`
+    simulator.textContent = `force :${forceArr} stress: ${stressArr} and strain ${strainArr}`
 
     //generateGraph()
      

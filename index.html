@@ -36,8 +36,9 @@
                                   </div>
                                   <div>
                                       <button class="button button__1" id="btn-result" type="submit">See Result</button>
-                                      <!-- <button class="button button__2"id="btn-graph">See graph</button>
-                                      <button class="button button__3"id="btn-simulator" type="submit">See simulator</button> -->
+                                       <!-- <button class="button button__2"id="btn-graph">See graph</button> -->
+                                       <a class="btn btn--green hidden" href="#popup" id="btn-simulator">See simulator</a>
+                                      <!-- <button class="button button__3"id="btn-simulator" type="submit">See simulator</button>  -->
       
                                   </div>
                                  
@@ -53,7 +54,7 @@
                           <div class="u-center-text u-margin-top-smalll">
                               <h2 class="heading__primary">Tensile Result output</h2>
                           </div>
-                          <div class="output__section">
+                          <div class="output__section" id="output__section">
                             
                               <!-- <p class="output force" id="">@load:</p> -->
                               <p class="output output__stress" id="stressText">stress@yield:</p>
@@ -74,6 +75,19 @@
     </main>
     <div class="row">
         <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+    </div>
+    <div class="popup" id="popup">
+        <div class="popup__content">
+            <div class="popup__left">
+                <img class="popup__img"  src="img/tensile-test.gif" alt="">
+            </div>
+            <div class="popup__right">
+                <p class="popup__text"></p>
+                <p class="simulator__text" id="simulate"></p>
+                 <a class="popup__close" href="#output__section">&times;</a>
+            
+            </div>
+        </div>
     </div>
     <footer class="u-center-text">
         <h3>Reserved &copy; 2022 Engr Babalola</h3>

@@ -179,7 +179,7 @@ main {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   width: 95rem;
-  height: 50rem;
+  width: 60vw;
   -webkit-box-shadow: 2px 3px 2px #111;
           box-shadow: 2px 3px 2px #111;
   background-color: #fff;
@@ -190,29 +190,26 @@ main {
 }
 
 .popup__right {
-  display: table-cell;
-  width: 20.33333%;
-  vertical-align: middle;
-  padding: 2rem 3rem;
+  display: block;
+  width: 50vw;
   font-size: 16px;
-  color: orangered;
 }
 
 .popup__left {
-  display: table-cell;
-  width: 60.666667%;
+  display: block;
+  width: 50vw;
 }
 
 .popup__img {
   display: block;
-  width: 10rem;
+  width: 50vw;
   height: 40rem;
 }
 
 .popup__text {
   font-size: 1.4rem;
   color: green;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .popup__close:link, .popup__close:visited {

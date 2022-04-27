@@ -18,7 +18,7 @@
     &__content {
        @include absposition;
         width: 95rem;
-        height: 50rem;
+        width: 60vw;
         box-shadow: 2px 3px 2px #111;
         background-color: #fff;
         border-radius: 3px;
@@ -29,26 +29,18 @@
         
     }
     &__right{
-        display: table-cell;
-        width: 20.33333%;
-        vertical-align: middle;
-        padding: 2rem 3rem;
+        display: block;
+        width: 50vw;
         font-size: 16px;
-        color: orangered;
-
-
     }
     &__left{
-        display: table-cell;
-        width: 60.666667%;
-     
-   
-
+        display: block;
+        width: 50vw;
     }
 
     &__img{
         display: block;
-        width: 10rem;
+        width: 50vw;
         height: 40rem;
      
 
@@ -56,7 +48,7 @@
     &__text {
         font-size: 1.4rem;
         color: green;
-        padding: 2rem;
+        padding: 1rem;
     }
     &__close {
         &:link,

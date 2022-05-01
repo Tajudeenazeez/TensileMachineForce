@@ -2,12 +2,9 @@ const formField = document.querySelector("#formField");
 const getOption = document.querySelector("#formField #material")
 //getting input from form
  const forceText = document.querySelector("#force");
-// const brass = document.querySelector("#brass")
-// const metal = document.querySelector("#metal")
 
 const materialLength = document.querySelector("#length")
 const materialDiameter = document.querySelector("#diameter")
-
 
 //getting the button
 const seeResult = document.querySelector("#btn-result")
@@ -21,12 +18,11 @@ const strainResult = document.querySelector("#strainText")
 const stressResult = document.querySelector("#stressText")
 const areaResult = document.querySelector("#areaText")
 const changeLength = document.querySelector("#changeLength")
+const Flength = document.querySelector("#finalLength")
 const tensileStress = document.querySelector("#tensileStress")
 const elongationResult = document.querySelector("#elongationText")
 const diameterResult = document.querySelector("#diameterText")
 const simulator = document.getElementById("simulate")
-//working array of force, stress and strain
-
 
 //working variables for Aluminum
 const elongationAlu = 0.18;
@@ -41,13 +37,7 @@ const elongationMetal = .25;
 const constOneMetal = 14.29125;
 const constTwoMetal = 68.43;
 
-
 formField.addEventListener("submit", onSubmitResult)
-
-// seeResult.addEventListener("click", seeMyResult)
-// seeGraph.addEventListener("click", onSubmitResult)
-// seeSimulation.addEventListener("click", onSubmitResult)
-
 
 function onSubmitResult(e) {
     e.preventDefault()
@@ -59,8 +49,8 @@ function onSubmitResult(e) {
   
     const radius = initialDiameter / 2
     const area = 3.142 * radius**2
-    areaResult.textContent = `Area: ${area}`
-    diameterResult.textContent = `Diameter: ${initialDiameter}`
+    areaResult.textContent = `Area: ${area}mm`
+    diameterResult.textContent = `Diameter: ${initialDiameter}mm`
     const forceArr = [];
     const lengthArr = [];
     const stressArr = [];
@@ -73,7 +63,8 @@ function onSubmitResult(e) {
         //finalLength
         elongationResult.textContent = `elongation : ${elongationAlu}`
         const finalLength = (elongationAlu * initialLength) + initialLength
-        changeLength.textContent = `change in Length: ${finalLength - initialLength}`
+        changeLength.textContent = `change in Length: ${finalLength - initialLength}mm`
+        Flength.textContent = `final length: ${finalLength}mm`
         //To get kia for alu (kia)
         const kIA = (initialLength * constOneAlu) + constTwoAlu
         const force0 = (len) => {
@@ -139,14 +130,6 @@ function onSubmitResult(e) {
         force6(initialLength)
         stressFromForceByArea(forceArr, area)
         strainFromLength(lengthArr, initialLength) 
-        console.log(forceArr)
-
-        // forceText.textContent = `Force @load: ${forceArr[2]} N/mm`
-        // let averageStress = (stressArr[2] - stressArr[1]) /2
-        // stressResult.textContent = `stress @yield: ${averageStress}`
-        // strainResult.textContent = `strain: ${strainArr[strainArr.length-1]}`
-        // tensileStress.textContent = `ultimate Tensile Stress: ${stressArr[4]}`
-       
     } 
     if (getOption.value === "Brass") {
         elongationResult.textContent = `elongation : ${elongationBrass}`
@@ -210,7 +193,8 @@ function onSubmitResult(e) {
         }
         //finalLength
         const finalLength = (elongationBrass * initialLength) + initialLength
-        changeLength.textContent = `change in Length: ${finalLength - initialLength}`
+        changeLength.textContent = `change in Length: ${finalLength - initialLength}mm`
+        Flength.textContent = `final length: ${finalLength}mm`
         //To get kia for alu (kia)
         const kIB = (initialLength * constOneBrass) + constTwoBrass
         
@@ -224,14 +208,7 @@ function onSubmitResult(e) {
         force7(initialLength)
         stressFromForceByArea(forceArr, area)
         strainFromLength(lengthArr, initialLength) 
-        console.log(forceArr, stressArr)
-
-        // forceText.textContent = `Force @load: ${forceArr[2]} N/mm`
-        // let averageStress = (stressArr[2] - stressArr[1]) /2
-        // stressResult.textContent = `stress @yield: ${averageStress}`
-        // strainResult.textContent = `strain: ${strainArr[strainArr.length-1]}`
-        // tensileStress.textContent = `ultimate Tensile Stress: ${stressArr[4]}`
-            
+         
     } 
     if (getOption.value === "Mild Metal") {
         elongationResult.textContent = `elongation : ${elongationMetal}`
@@ -304,7 +281,8 @@ function onSubmitResult(e) {
 
     //finalLength
     const finalLength = (elongationMetal * initialLength) + initialLength
-    changeLength.textContent = `change in Length: ${finalLength - initialLength}`
+    changeLength.textContent = `change in Length: ${finalLength - initialLength}mm`
+    Flength.textContent = `final length: ${finalLength}mm`
     //To get kia for alu (kia)
     const kIM = (initialLength * constOneMetal) + constTwoMetal
     
@@ -319,27 +297,22 @@ function onSubmitResult(e) {
     force8(initialLength)
     stressFromForceByArea(forceArr, area)
     strainFromLength(lengthArr, initialLength) 
-    console.log(forceArr, stressArr)
+    
 
-    // forceText.textContent = `Force @load: ${forceArr[2]} N/mm`
-    // let averageStress = (stressArr[2] - stressArr[1]) /2
-    // stressResult.textContent = `stress @yield: ${averageStress}`
-    // strainResult.textContent = `strain: ${strainArr[strainArr.length-1]}`
-    // tensileStress.textContent = `ultimate Tensile Stress: ${stressArr[4]}`
     } 
 
-    forceText.textContent = `Force @load: ${forceArr[2]} N/mm`
+    forceText.textContent = `Force: ${forceArr[forceArr.length-1]}N/mm`
     let averageStress = (stressArr[2] - stressArr[1]) /2
-    stressResult.textContent = `stress @yield: ${averageStress}`
+    stressResult.textContent = `stress @yield: ${averageStress} N/mm`
     strainResult.textContent = `strain: ${strainArr[strainArr.length-1]}`
-    tensileStress.textContent = `ultimate Tensile Stress: ${stressArr[4]}`
+    tensileStress.textContent = `ultimate Tensile Stress: ${stressArr[4]} N/mm`
     simulator.textContent = `force :
-    ${forceArr} 
+    ${forceArr[forceArr.length-1]}N/mm 
     stress: 
-    ${stressArr} 
+    ${stressArr[stressArr.length-1]}N/mm
     and 
     strain: 
-    ${strainArr}`
+    ${strainArr[strainArr.length-1]}`
 
     //generateGraph()
      
@@ -364,9 +337,3 @@ function onSubmitResult(e) {
       });
 
 }
-
-// function generateGraph(){
-
-
-// }
-//   seeGraph.addEventListener("click", generateGraph)

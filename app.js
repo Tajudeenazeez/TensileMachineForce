@@ -49,7 +49,7 @@ function onSubmitResult(e) {
   
     const radius = initialDiameter / 2
     const area = 3.142 * radius**2
-    areaResult.textContent = `Area: ${area}mm`
+    areaResult.innerHTML = `Area: ${area}mm<sup>2</sup>`
     diameterResult.textContent = `Diameter: ${initialDiameter}mm`
     const forceArr = [];
     const lengthArr = [];
@@ -61,7 +61,7 @@ function onSubmitResult(e) {
   }
     if (getOption.value === "Aluminum") {
         //finalLength
-        elongationResult.textContent = `elongation : ${elongationAlu}`
+        elongationResult.textContent = `% elongation : ${elongationAlu}`
         const finalLength = (elongationAlu * initialLength) + initialLength
         changeLength.textContent = `change in Length: ${finalLength - initialLength}mm`
         Flength.textContent = `final length: ${finalLength}mm`
@@ -132,7 +132,7 @@ function onSubmitResult(e) {
         strainFromLength(lengthArr, initialLength) 
     } 
     if (getOption.value === "Brass") {
-        elongationResult.textContent = `elongation : ${elongationBrass}`
+        elongationResult.textContent = `% elongation : ${elongationBrass}`
         const force0 = (len) => {
             let fe0 = 0 * len
             forceArr.push(fe0)
@@ -211,7 +211,7 @@ function onSubmitResult(e) {
          
     } 
     if (getOption.value === "Mild Metal") {
-        elongationResult.textContent = `elongation : ${elongationMetal}`
+        elongationResult.textContent = `% elongation : ${elongationMetal}`
         const force0 = (len) => {
             let fe0 = 0 * len
             forceArr.push(fe0)
@@ -301,18 +301,23 @@ function onSubmitResult(e) {
 
     } 
 
-    forceText.textContent = `Force: ${forceArr[forceArr.length-1]}N/mm`
+    forceText.textContent = `Force @break: ${forceArr[forceArr.length-1]} N`
     let averageStress = (stressArr[2] - stressArr[1]) /2
     stressResult.textContent = `stress @yield: ${averageStress} N/mm`
     strainResult.textContent = `strain: ${strainArr[strainArr.length-1]}`
-    tensileStress.textContent = `ultimate Tensile Stress: ${stressArr[4]} N/mm`
-    simulator.textContent = `force :
-    ${forceArr[forceArr.length-1]}N/mm 
+    tensileStress.textContent = `ultimate Tensile Strength: ${stressArr[4]} N/mm`
+    simulator.textContent = `force @yield:
+    ${(forceArr[1]  + forceArr[2])/2}N
+    force @break:
+    ${forceArr[forceArr.length-1]}N
+    force @peak:
+    ${forceArr[4]}N 
     stress: 
     ${stressArr[stressArr.length-1]}N/mm
     and 
     strain: 
-    ${strainArr[strainArr.length-1]}`
+    ${strainArr[strainArr.length-1]}
+    `
 
     //generateGraph()
      
@@ -330,6 +335,11 @@ function onSubmitResult(e) {
         },
         options: {
           legend: {display: false},
+          title: {
+            display: true,
+            text: "Engineering stress",
+            fontSize: 16
+          },
           scales: {
             yAxes: [{ticks: {min: 0, max:stressArr[stressArr.length-1] * 2}}],
           }

@@ -36,14 +36,20 @@
     &__left{
         display: block;
         width: 50vw;
+        // background-image: linear-gradient(105deg, 
+        // rgba(white, .9) 0%, 
+        // rgba(white, .9 ) 50%,
+        // transparent 50%),
+        // url("/img/tensile-test-steel2.gif");
+        // background-size: cover;
     }
 
     &__img{
         display: block;
         width: 50vw;
         height: 40rem;
-     
-
+        // background: linear-gradient(45deg, orangered 50%, red 50%, transparent 50%);
+  
     }
     &__text {
         font-size: 1.4rem;

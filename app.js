@@ -301,21 +301,21 @@ function onSubmitResult(e) {
 
     } 
 
-    forceText.textContent = `Force @break: ${forceArr[forceArr.length-1]} N`
+    forceText.textContent = `Force @Break: ${forceArr[forceArr.length-1]} N`
     let averageStress = (stressArr[2] - stressArr[1]) /2
-    stressResult.textContent = `stress @yield: ${averageStress} N/mm`
+    stressResult.textContent = `stress @Yield: ${averageStress} N/mm`
     strainResult.textContent = `strain: ${strainArr[strainArr.length-1]}`
     tensileStress.textContent = `ultimate Tensile Strength: ${stressArr[4]} N/mm`
-    simulator.textContent = `force @yield:
+    simulator.textContent = `force @Yield:
     ${(forceArr[1]  + forceArr[2])/2}N
-    force @break:
+    force @Break:
     ${forceArr[forceArr.length-1]}N
-    force @peak:
+    force @Peak:
     ${forceArr[4]}N 
-    stress: 
+    stress @Break: 
     ${stressArr[stressArr.length-1]}N/mm
     and 
-    strain: 
+    strain @Beak: 
     ${strainArr[strainArr.length-1]}
     `
 
